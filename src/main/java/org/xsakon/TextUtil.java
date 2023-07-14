@@ -9,7 +9,7 @@ public class TextUtil {
         String word = "";
 
 
-        for (int i = 0; i < text.length(); i++) {
+        for (int i = 0; i < text.length() - 1; i++) {
 
             char currentChar = text.charAt(i);
             if ((currentChar >= 65 && currentChar <= 90)
