@@ -33,7 +33,7 @@ public class TextUtil {
         return words;
     }
 
-    public ArrayList<Character> findUniqueChars(ArrayList<String> words){
+    public ArrayList<Character> findUniqueCharForEachWord(ArrayList<String> words){
         ArrayList<Character> uniqueChars = new ArrayList<>();
 
         for (String word: words){
