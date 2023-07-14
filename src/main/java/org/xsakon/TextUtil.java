@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class TextUtil {
 
-    public ArrayList<String> findWords(java.lang.String text) {
+    public ArrayList<String> findWords(String text) {
         ArrayList<String> words = new ArrayList<>();
         String word = "";
 
