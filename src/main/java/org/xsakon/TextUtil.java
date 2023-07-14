@@ -41,9 +41,8 @@ public class TextUtil {
 
             for (int i = 0; i < word.length(); i++) {
                 for (int j = i + 1; j < word.length(); j++) {
-                    char secondCharacter = word.charAt(j);
 
-                    if (currentChar == secondCharacter){
+                    if (currentChar == word.charAt(j)){
                         i++;
                         currentChar = word.charAt(i);
                         break;
