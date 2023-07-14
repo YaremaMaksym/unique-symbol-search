@@ -13,14 +13,14 @@ public class TextUtil {
 
             char currentChar = text.charAt(i);
             if ((currentChar >= 65 && currentChar <= 90)
-                    || (currentChar >= 96 && currentChar <= 120)){
+                    || (currentChar >= 96 && currentChar <= 122)){
 
                 word = word.concat(Character.toString(currentChar));
 
 
                 char nextChar = text.charAt(i + 1);
                 if (((nextChar < 65 || nextChar > 90)
-                        && (nextChar < 96 || nextChar > 120))) {
+                        && (nextChar < 96 || nextChar > 122))) {
 
                     words.add(word);
                 }
