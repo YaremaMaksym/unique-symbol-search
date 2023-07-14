@@ -32,4 +32,28 @@ public class TextUtil {
 
         return words;
     }
+
+    public ArrayList<Character> findUniqueChars(ArrayList<String> words){
+        ArrayList<Character> uniqueChars = new ArrayList<>();
+
+        for (String word: words){
+            char currentChar = word.charAt(0);
+
+            for (int i = 0; i < word.length(); i++) {
+                for (int j = i + 1; j < word.length(); j++) {
+                    char secondCharacter = word.charAt(j);
+
+                    if (currentChar == secondCharacter){
+                        i++;
+                        currentChar = word.charAt(i);
+                        break;
+                    }
+                }
+            }
+            uniqueChars.add(currentChar);
+        }
+
+        return uniqueChars;
+    }
+
 }
