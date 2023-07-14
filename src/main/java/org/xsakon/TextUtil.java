@@ -1,6 +1,7 @@
 package org.xsakon;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 
 public class TextUtil {
 
@@ -53,6 +54,37 @@ public class TextUtil {
         }
 
         return uniqueChars;
+    }
+
+    public Character findFirstUniqueChar(String text){
+        ArrayList<String> words = findWords(text);
+        ArrayList<Character> uniqueChars = findUniqueCharForEachWord(words);
+
+        Character currentChar = uniqueChars.get(0);
+        boolean foundFirstUnique = false;
+        HashSet<Character> seenChars = new HashSet<>();
+
+        for (int i = 0; i < uniqueChars.size(); i++) {
+            for (int j = i + 1; j < uniqueChars.size(); j++) {
+                if (currentChar == uniqueChars.get(j) || seenChars.contains(currentChar)){
+
+                    seenChars.add(currentChar);
+
+                    currentChar = uniqueChars.get(i + 1);
+                    foundFirstUnique = false;
+                    break;
+                }
+                else {
+                    foundFirstUnique = true;
+                }
+            }
+
+            if (foundFirstUnique) {
+                return currentChar;
+            }
+        }
+
+        return currentChar;
     }
 
 }
